@@ -4,6 +4,7 @@
   "description": "Aura+: Autonomous Ambient AI Guardian & Streamable MCP Orchestrator for Alexa+",
   "main": "server/index.js",
   "scripts": {
+    "test": "node test-mcp.js",
     "dev": "concurrently -n \"SERVER,CLIENT\" -c \"cyan,magenta\" \"npm run server\" \"npm run client\"",
     "server": "node server/index.js",
     "client": "npm --prefix client run dev",
