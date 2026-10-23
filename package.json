@@ -10,6 +10,7 @@
     "client": "npm --prefix client run dev",
     "build": "npm --prefix client run build",
     "record": "node record-demo.js",
+    "screenshots": "node capture-screenshots.js",
     "start": "node server/index.js"
   },
   "keywords": [
