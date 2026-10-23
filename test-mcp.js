@@ -40,12 +40,42 @@ async function rpcCall(method, params = {}) {
   });
 }
 
+const { spawn } = require('child_process');
+const path = require('path');
+
+let spawnedServer = null;
+
+async function ensureServerRunning() {
+  try {
+    await rpcCall('initialize');
+    return; // Already running
+  } catch (e) {
+    console.log('📡 Starting Aura+ MCP Server on port 3001...');
+    spawnedServer = spawn(process.execPath, [path.join(__dirname, 'server', 'index.js')], {
+      cwd: __dirname,
+      env: { ...process.env, PORT: '3001' },
+      stdio: 'inherit'
+    });
+    for (let i = 0; i < 20; i++) {
+      await new Promise(r => setTimeout(r, 400));
+      try {
+        await rpcCall('initialize');
+        return;
+      } catch (err) {
+        // Retry
+      }
+    }
+  }
+}
+
 async function runTests() {
   console.log('====================================================');
   console.log('🧪 Running Aura+ MCP Server Automated Test Suite');
   console.log('====================================================\n');
 
   try {
+    await ensureServerRunning();
+
     // 1. Initialize Handshake
     console.log('1. Testing MCP Handshake (initialize)...');
     const initRes = await rpcCall('initialize');
@@ -114,7 +144,11 @@ async function runTests() {
     console.log('====================================================');
   } catch (err) {
     console.error('\n❌ TEST FAILED:', err.message);
-    process.exit(1);
+    process.exitCode = 1;
+  } finally {
+    if (spawnedServer) {
+      spawnedServer.kill();
+    }
   }
 }
 

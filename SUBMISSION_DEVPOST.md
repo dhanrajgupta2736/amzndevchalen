@@ -19,6 +19,16 @@
 
 ---
 
+### Project Links & Media
+* **GitHub Repository URL:** `https://github.com/dhanrajgupta2736/amzndevchalen`
+* **Demo Video URL (YouTube / Vimeo - < 3 min):** `PASTE_YOUR_DEMO_VIDEO_LINK_HERE`
+* **License:** MIT (Fully Open Source)
+
+### "Built With" Tags (Paste into Devpost tags field)
+`node.js, express, react, vite, mcp, model-context-protocol, aws-bedrock, amazon-nova, claude-3-5-sonnet, sse, json-rpc, vanilla-css, web-speech-api, ring, alexa`
+
+---
+
 ### Description / Project Overview
 
 #### 💡 Inspiration
@@ -56,3 +66,44 @@ We asked ourselves: *What if Alexa+ could act as a true ambient consciousness fo
 * Deploying Aura+ as a native AWS Lambda container accessible via public Amazon API Gateway.
 * Direct integration with Amazon Sidewalk and Matter/Thread mesh networks.
 * Expanding multi-modal computer vision directly on edge devices using AWS IoT Greengrass.
+
+---
+
+### 🧪 Instructions for Hackathon Judges & Testing
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/dhanrajgupta2736/amzndevchalen.git
+   cd amzndevchalen
+   npm install
+   ```
+
+2. **Run automated verification tests:**
+   ```bash
+   npm test
+   ```
+   *(Validates all 6 MCP specification handshakes, SSE lifecycles, and tool schemas).*
+
+3. **Launch the Ambient Portal:**
+   ```bash
+   npm start
+   ```
+   Open `http://localhost:3001` in any browser.
+
+4. **Zero-Config Evaluation:**
+   * No AWS credentials required! Aura+ includes a built-in high-fidelity Bedrock agentic simulation mode.
+   * If you wish to test with live Amazon Bedrock Nova / Claude models, simply configure `.env` with your AWS credentials (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`).
+   * Click any of the **4 1-Click Demo Scenarios** along the top bar to trigger instant multi-tool agentic triage.
+   * Open the **⚡ MCP Inspector** drawer to inspect live Server-Sent Events (SSE) and JSON-RPC 2.0 streaming packets.
+
+---
+
+### 👥 GitHub Collaborator Access (If Repository is Private)
+If the repository is set to private, please ensure the following Amazon DevRel and Devpost reviewer handles are invited under `Settings > Collaborators > Add people`:
+* `knmeiss`
+* `giolaq`
+* `anishamalde`
+* `mosesroth`
+* `emersonsklar`
+* `testing@devpost.com`
+
