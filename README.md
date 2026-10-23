@@ -10,6 +10,8 @@
 > **Primary Track:** Alexa+  
 > **Mini Challenges:** AWS Builder (Amazon Bedrock) & Open Source  
 
+![Aura+ Ambient Intelligence for Alexa+](thumbnail.jpg)
+
 ---
 
 ## 🌟 Executive Summary
