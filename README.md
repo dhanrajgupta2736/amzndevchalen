@@ -76,8 +76,8 @@ Aura+ registers 5 production-grade MCP tools compliant with JSON Schema validati
 
 ### 1. Clone & Install:
 ```bash
-git clone https://github.com/YOUR_USERNAME/amzn-dev.git
-cd amzn-dev
+git clone https://github.com/dhanrajgupta2736/amzndevchalen.git
+cd amzndevchalen
 npm install
 ```
 
